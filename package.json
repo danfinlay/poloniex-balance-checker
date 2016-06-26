@@ -1,0 +1,20 @@
+{
+  "name": "poloniex-balance-checker",
+  "version": "1.0.0",
+  "description": "A balance checker for poloniex.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Poloniex",
+    "Bitcoin",
+    "Balance"
+  ],
+  "author": "Dan Finlay",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.0.0-rc.6",
+    "poloniex.js": "0.0.6"
+  }
+}
