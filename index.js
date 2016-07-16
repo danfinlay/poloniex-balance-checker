@@ -18,9 +18,17 @@ async.parallel({
   for(let symbol in balances) {
     const holding = parseFloat(balances[symbol])
     if (holding > 0) {
-      balance += holding * ticker[symbol]
+      let multiple, tickerSymbol
+      if (symbol === 'BTC') {
+        multiple = 1
+      } else {
+        tickerSymbol = `BTC_${symbol}`
+        multiple = parseFloat(ticker[tickerSymbol].last)
+      }
+      balance += holding * multiple
     }
   }
 
-  console.log(`Holdings equal to BTC:${balance}`)
+  const now = new Date()
+  console.log(`${now.toString()} Holdings equal to BTC:${balance}`)
 })
